@@ -109,7 +109,7 @@ public class CustomerController {
 
 
 
-    @Operation(summary = "Delete a bank", description = "Update a bank status to DELETED")
+    @Operation(summary = "Delete a Customer", description = "Update a Customer status to DELETED")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Successfully deleted"),
             @ApiResponse(responseCode = "400", description = "Bad Request"),
@@ -120,7 +120,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBankById(
+    public ResponseEntity<Void> deleteById(
             @PathVariable("id") @Parameter(name = "id", description = "Customer id to delete", example = "1") Long id
     ) {
         service.deleteById(id);
